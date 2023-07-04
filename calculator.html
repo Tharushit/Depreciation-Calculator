@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Depreciation calculator</title>
+    <script defer src="cal.js"></script>
+    <link rel="stylesheet" href="accounts.css">
+
+</head>
+
+<body>
+    <label for="straight">Basis:</label>
+    <input type="radio" id="straight" name="basis" value="straight" onclick="showStraightLine()"><label for="straight">Straight-Line Basis</label>
+    <input type="radio" id="reducing" name="basis" value="reducing" onclick="showReducingBalance()"><label for="reducing">Reducing Balance Basis</label>
+    <div class="straightline">
+        <label for="Scost">Cost:</label>
+        <input type="number" id="Scost"><br>
+        <label for="SresidualValue">Residual Value:</label>
+        <input type="number" id="SresidualValue"><br>
+        <label for="usefulLife">Useful Lifetime:</label>
+        <input type="number" id="usefulLife" onkeyup="life()">
+        <span> OR </span>
+        <label for="SdepreciationPercentage">Depreciation Percentage:</label>
+        <input type="number" id="SdepreciationPercentage" onkeyup="percent()" max='100'><br>
+        <input type="button" value="calculate" id="Scalculate" onclick="straightLine()"><br>
+        <div class="Sanswers"></div>
+    </div>
+    <div class="reducingbalance">
+        <label for="Rcost">Cost:</label>
+        <input type="number" id="Rcost"><br>
+        <label for="RresidualValue">Residual Value:</label>
+        <input type="number" id="RresidualValue"><br>
+        <label for="RdepreciationPercentage">Depreciation Percentage:</label>
+        <input type="number" id="RdepreciationPercentage"><br>
+        <label for="years">For how many Years:</label>
+        <input type="number" id="years"><br>
+        <input type="button" value="calculate" id="Rcalculate" onclick="reducingBalance()"><br>
+        <div class="Ranswers"></div>
+        <hr>
+        <div class="accdep"></div>
+    </div>
+</body>
+
+</html>
